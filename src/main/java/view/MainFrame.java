@@ -111,15 +111,15 @@ public class MainFrame extends JFrame {
         String selectedId = JOptionPane.showInputDialog(this, "Enter Employee ID:", "Generate Payslip", JOptionPane.QUESTION_MESSAGE);
     
     if (selectedId != null && !selectedId.trim().isEmpty()) {
-        // --- NEW MONTH SELECTION BOX ---
-        String[] months = {"1 - January", "2 - February", "3 - March", "4 - April", "5 - May", "6 - June"};
+       
+        String[] months = {"1 - January", "2 - February", "3 - March", "4 - April", "5 - May", "6 - June","7 - July","8 - August", "9 - September", "10 - October", "11 - November", "12 - December"};
         String selectedMonthStr = (String) JOptionPane.showInputDialog(this, 
                 "Select Payroll Month:", "Period Selection", 
                 JOptionPane.QUESTION_MESSAGE, null, months, months[2]); // Default to March
 
         if (selectedMonthStr != null) {
             try {
-                // Extract the number from the string (e.g., "3" from "3 - March")
+            
                 int month = Integer.parseInt(selectedMonthStr.split(" - ")[0]);
 
                 PayrollResult result = PayrollService.getInstance().getPayrollResultForGUI(selectedId, month);
