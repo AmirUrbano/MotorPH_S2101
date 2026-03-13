@@ -112,12 +112,12 @@ public class PayrollService {
         return report.toString();
     }
     
-    // ADD THIS METHOD TO PayrollService.java
+   
     public PayrollResult getPayrollResultForGUI(String employeeId, int month) {
     Employee employee = employeeDetails.findEmployeeById(employeeId);
     if (employee == null) return null;
 
-    // --- REUSING YOUR MATH LOGIC FROM processMonthlyPayroll ---
+   
     LocalDate startOfMonth = LocalDate.of(2024, month, 1);
     LocalDate endOfMonth = startOfMonth.withDayOfMonth(startOfMonth.lengthOfMonth());
     
@@ -152,7 +152,7 @@ public class PayrollService {
         currentWeekStart = currentWeekStart.plusDays(7);
     }
 
-    // Deductions (Matching your exact logic from line 102-106)
+    
     double totalSSS = employee.calculateSSS();
     double totalPhilHealth = employee.calculatePhilHealth();
     double totalPagIbig = employee.calculatePagIbig();
@@ -162,7 +162,7 @@ public class PayrollService {
     double totalMonthlyNetSalary = (totalMonthlyGrossSalary - totalLateDeductions - 
                                    totalSSS - totalPhilHealth - totalPagIbig - totalWithholdingTax) + totalAllowances;
 
-    // 3. Return the populated PayrollResult
+  
     return new PayrollResult(
         employee.getEmployeeId(),
         employee.getLastName(),
