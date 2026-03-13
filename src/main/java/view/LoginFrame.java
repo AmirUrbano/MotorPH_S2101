@@ -85,7 +85,7 @@ public class LoginFrame extends JFrame {
         loginButton.setFocusPainted(false);
         loginButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
-        // Reuse your logic
+   
         loginButton.addActionListener(e -> performLogin());
         passwordField.addKeyListener(new KeyListener() {
             @Override
